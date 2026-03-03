@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-primary: "Inter", sans-serif;
+  --font-heading: "Playfair Display", serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  /* Use antialiasing for a cleaner look on Inter */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.marquee__text {
+  font-size: 5rem;
+  white-space: nowrap;
+  padding-right: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color:black;
+}
+
+/* Infinite smooth animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
