@@ -5,8 +5,9 @@ edition = "2024"         # edition = "legacy" to use legacy (pre-2024) Move
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 version = "0.0.1"
 
-[dependencies]
-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/devnet" }
+# Removed explicit Sui dependency to enable automatic handling
 
 [addresses]
+nft_marketplace = "0x0"
+example = "0x0"
 devhub = "0x0"
