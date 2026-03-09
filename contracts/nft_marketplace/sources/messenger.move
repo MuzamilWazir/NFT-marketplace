@@ -2,6 +2,8 @@ module devhub :: messenger {
 
 use std::string::String;
 use sui::object ::{Self, UID};
+use sui::tranfer::{Self , transfer};
+use sui::tx_context::{Self, TxContext};
 
 
 struct Admin has  key {
@@ -26,7 +28,7 @@ public entry fun  create_message( _:Admin , name :vector<u8> , message : vector<
         from,
         to
     };
-
+transfer::transfer(message, tx_context::sender(ctx));
 }
 
 } 
