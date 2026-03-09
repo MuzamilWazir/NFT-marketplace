@@ -31,4 +31,13 @@ public entry fun  create_message( _:Admin , name :vector<u8> , message : vector<
 transfer::transfer(message, tx_context::sender(ctx));
 }
 
+
+init fun (ctx: &mut TxContext) {
+    let admin = Admin {
+        id: UID::new(ctx),
+    };
+    transfer::transfer(admin, tx_context::sender(ctx));
+
 } 
+
+}
